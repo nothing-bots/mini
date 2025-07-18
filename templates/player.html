@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ track.title }} - Mini Room</title>
+  <style>
+    body {
+      background: #0e0e0e;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+    .player-card {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #000;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    img {
+      border-radius: 12px;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    audio {
+      width: 100%;
+      margin: 20px 0;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .btn-skip {
+      background: #ff6a00;
+      color: white;
+    }
+    .btn-stop {
+      background: crimson;
+      color: white;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="player-card">
+    <img src="{{ track.thumb }}" alt="Thumbnail" />
+    <h2>{{ track.title }}</h2>
+    <audio id="audio" controls autoplay>
+      <source src="https://www.youtube.com/watch?v={{ track.vidid }}" type="audio/mp4" />
+      Your browser does not support audio playback.
+    </audio>
+    <div>
+      <button class="btn-stop" onclick="stopAudio()">⏹ Stop</button>
+      <button class="btn-skip" onclick="skipAudio()">⏭ Skip</button>
+    </div>
+  </div>
+  <footer>🎧 Made by <a href="https://t.me/its_damiann" target="_blank">@its_damiann</a></footer>
+
+  <script>
+    const audio = document.getElementById("audio");
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    function skipAudio() {
+      alert("⏭ Skipping not implemented in demo.");
+    }
+  </script>
+</body>
+</html>
