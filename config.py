@@ -1,0 +1,4 @@
+BOT_TOKEN = "YOUR_BOT_TOKEN"
+API_URL = "YOUR_API_URL"
+API_KEY = "YOUR_API_KEY"
+WEB_HOST = "http://localhost:5000"
